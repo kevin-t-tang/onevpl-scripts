@@ -1,0 +1,42 @@
+0. Install Ubuntu
+
+sudo apt update && sudo apt full-upgrade
+
+Kernel: linux-image-5.19.0-40-generic (HWE or newer)
+
+1. Setup Proxy (Optional)
+
+export http_proxy=http://example.com:8080
+export https_proxy=http://example.com:8080
+
+sudo vi /etc/apt/apt.conf.d/proxy.conf
+
+Acquire::http::Proxy "http://example.com:8080/";
+Acquire::https::Proxy "http://example.com:8080/";
+
+2. Add Repo
+
+wget -qO - https://repositories.intel.com/graphics/intel-graphics.key | \
+  sudo gpg --dearmor --output /usr/share/keyrings/intel-graphics.gpg
+echo 'deb [arch=amd64,i386 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/graphics/ubuntu jammy arc' | \
+  sudo tee  /etc/apt/sources.list.d/intel.gpu.jammy.list
+
+3. Install Kmod
+
+sudo apt install gawk dkms linux-headers-$(uname -r) libc6-dev udev
+sudo apt install dctrl-tools intel-i915-dkms intel-platform-cse-dkms intel-platform-vsec-dkms
+
+4. Install UMD
+
+sudo apt install \
+  intel-opencl-icd intel-level-zero-gpu level-zero \
+  intel-media-va-driver-non-free libmfx1 libmfxgen1 libvpl2 \
+  libegl-mesa0 libegl1-mesa libegl1-mesa-dev libgbm1 libgl1-mesa-dev libgl1-mesa-dri \
+  libglapi-mesa libgles2-mesa-dev libglx-mesa0 libigdgmm12 libxatracker2 mesa-va-drivers \
+  mesa-vdpau-drivers mesa-vulkan-drivers va-driver-all \
+  vainfo clinfo
+
+5. Update GRUB
+
+Edit '/etc/default/grub' and run 'sudo updare-grub'
+GRUB_CMDLINE_LINUX_DEFAULT="i915.force_probe=* i915.enable_guc=3"
