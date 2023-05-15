@@ -1,0 +1,34 @@
+0. Download Sample Videos
+
+wget https://ultravideo.fi/video/Beauty_3840x2160_120fps_420_8bit_YUV_RAW.7z
+wget https://ultravideo.fi/video/Beauty_3840x2160_120fps_420_10bit_YUV_RAW.7z
+wget https://ultravideo.fi/video/Beauty_1920x1080_120fps_420_8bit_YUV_RAW.7z
+
+wget https://ultravideo.fi/video/Bosphorus_3840x2160_120fps_420_8bit_YUV_RAW.7z
+wget https://ultravideo.fi/video/Bosphorus_3840x2160_120fps_420_10bit_YUV_RAW.7z
+wget https://ultravideo.fi/video/Bosphorus_1920x1080_120fps_420_8bit_YUV_RAW.7z
+
+wget https://ultravideo.fi/video/HoneyBee_3840x2160_120fps_420_8bit_YUV_RAW.7z
+wget https://ultravideo.fi/video/HoneyBee_3840x2160_120fps_420_10bit_YUV_RAW.7z
+wget https://ultravideo.fi/video/HoneyBee_1920x1080_120fps_420_8bit_YUV_RAW.7z
+
+wget https://ultravideo.fi/video/Jockey_3840x2160_120fps_420_8bit_YUV_RAW.7z
+wget https://ultravideo.fi/video/Jockey_3840x2160_120fps_420_10bit_YUV_RAW.7z
+wget https://ultravideo.fi/video/Jockey_1920x1080_120fps_420_8bit_YUV_RAW.7z
+
+wget https://ultravideo.fi/video/ReadySetGo_3840x2160_120fps_420_8bit_YUV_RAW.7z
+wget https://ultravideo.fi/video/ReadySetGo_3840x2160_120fps_420_10bit_YUV_RAW.7z
+wget https://ultravideo.fi/video/ReadySetGo_1920x1080_120fps_420_8bit_YUV_RAW.7z
+
+wget https://ultravideo.fi/video/ShakeNDry_3840x2160_120fps_420_8bit_YUV_RAW.7z
+wget https://ultravideo.fi/video/ShakeNDry_3840x2160_120fps_420_10bit_YUV_RAW.7z
+wget https://ultravideo.fi/video/ShakeNDry_1920x1080_120fps_420_8bit_YUV_RAW.7z
+
+wget https://ultravideo.fi/video/YachtRide_3840x2160_120fps_420_8bit_YUV_RAW.7z
+wget https://ultravideo.fi/video/YachtRide_3840x2160_120fps_420_10bit_YUV_RAW.7z
+wget https://ultravideo.fi/video/YachtRide_1920x1080_120fps_420_8bit_YUV_RAW.7z
+
+1. Extract the Sample Videos
+
+sudo apt install p7zip-full
+find . -name "*.7z" -exec 7z x {} \;
